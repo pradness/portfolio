@@ -1,81 +1,38 @@
 # Terminal Portfolio
 
-A terminal-inspired, single-page portfolio built with:
+A terminal-inspired personal portfolio designed to present engineering work with a clean, memorable interface. The experience blends a retro command-line aesthetic with responsive layout, project showcases, and theme-aware visual styling.
 
-- `HTML`
-- `CSS`
-- vanilla `JavaScript`
-- `@webtui/css`
+## Overview
 
-## Features
+This portfolio is built as a single-page web experience with a workspace-style navigation model. It features a boot sequence, fixed chrome bars, themed section panels, and a custom ASCII hero header for a strong visual identity.
 
-- Boot-screen intro animation
-- Fixed top navbar and status bar
-- Section-based workspace navigation
-- Theme selector in the status bar
-- Dynamic theme loading from `themes.json`
-- Per-theme section border colors
-- ANSI-style ASCII art hero header
-- Project cards with image sidebars
-- Responsive layout for smaller screens
+## Highlights
 
-## Project sections
+- Terminal-style UI with a polished boot screen and window chrome
+- Section-based navigation for `home`, `about`, `skills`, `projects`, and `contact`
+- Dynamic theme switching powered by `themes.json`
+- Per-section border color variation for richer visual distinction
+- ASCII art hero treatment for the main introduction
+- Project cards with supporting imagery and responsive side panels
+- Mobile-friendly layout that adapts without losing the terminal aesthetic
 
-- `home`
-- `about`
-- `skills`
-- `projects`
-- `contact`
-
-## Notable projects
+## Featured work
 
 The portfolio currently highlights:
 
-- **AeroScan** — aerial imagery analysis
-- **CTF Platform** — infrastructure and security challenges
+- **AeroScan** — aerial imagery analysis and geospatial processing
+- **CTF Platform** — cloud infrastructure and security challenge deployment
 - **ModelGate** — backend/API work in progress
 
-## Key files
+## Structure
 
-- `index.html` — page structure
-- `styles.css` — layout and theme styling
-- `script.js` — navigation, boot screen, and theme loading
-- `themes.json` — theme definitions and color mappings
+- `index.html` — page structure and content
+- `styles.css` — layout, typography, and theme styling
+- `script.js` — navigation, boot flow, and theme application
+- `themes.json` — theme definitions and border color mappings
+- `assets/` — project images and resume assets
 
-## Assets
+## Design approach
 
-- `assets/AeroScan.png`
-- `assets/CTFplatform.png`
-- `assets/Resume.pdf`
+The UI is intentionally minimal, emphasizing clarity, contrast, and hierarchy. Content is framed as a modern command-line workspace, making it suitable for presenting technical experience, projects, and contact information in a way that feels both distinctive and professional.
 
-## Run locally
-
-Because this is a static site, you can open `index.html` directly in a browser.
-
-For a better local experience, run a simple server from the `portfolio` directory:
-
-```bash
-python3 -m http.server 8000
-```
-
-Then visit:
-
-```text
-http://localhost:8000
-```
-
-## Notes
-
-- The site uses the CDN version of `@webtui/css` in `index.html`.
-- Theme colors and section border colors are controlled through `themes.json`.
-- The project image cards are implemented as reusable shared layouts in CSS.
-
-## Customization
-
-If you want to personalize the portfolio, update:
-
-- your name and ASCII hero text in `index.html`
-- social links and email address
-- project descriptions and URLs
-- `assets/resume.txt`
-- `themes.json` if you want to add or tweak themes
