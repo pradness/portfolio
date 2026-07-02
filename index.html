@@ -1,0 +1,983 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Terminal-inspired portfolio — ML Engineer & Backend Developer."
+        />
+        <title>Pradnyesh Keluskar</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;0,800;1,400&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            @layer base, utils, components;
+        </style>
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@webtui/css@0.1.8/dist/full.css"
+        />
+        <link rel="stylesheet" href="./styles.css" />
+    </head>
+    <body data-theme="nord">
+        <!-- ── Boot screen ───────────────────────────────────── -->
+        <div class="boot-screen" id="bootScreen" aria-hidden="true">
+            <div class="boot-window" box-="round">
+                <div class="boot-body" id="bootOutput"></div>
+            </div>
+        </div>
+
+        <!-- ── Topbar: single-row, no shear ──────────────────── -->
+        <header class="topbar">
+            <nav class="nav" box-="round" aria-label="Primary">
+                <div class="nav-inner">
+                    <button class="brand" type="button" data-section="home">
+                        ~/portfolio
+                    </button>
+                    <div
+                        class="nav-links"
+                        role="tablist"
+                        aria-label="Portfolio windows"
+                    >
+                        <button
+                            class="nav-tab"
+                            type="button"
+                            data-section="home"
+                            role="tab"
+                            aria-selected="true"
+                        >
+                            home
+                        </button>
+                        <button
+                            class="nav-tab"
+                            type="button"
+                            data-section="about"
+                            role="tab"
+                            aria-selected="false"
+                        >
+                            about
+                        </button>
+                        <button
+                            class="nav-tab"
+                            type="button"
+                            data-section="skills"
+                            role="tab"
+                            aria-selected="false"
+                        >
+                            skills
+                        </button>
+                        <button
+                            class="nav-tab"
+                            type="button"
+                            data-section="projects"
+                            role="tab"
+                            aria-selected="false"
+                        >
+                            projects
+                        </button>
+                        <button
+                            class="nav-tab"
+                            type="button"
+                            data-section="contact"
+                            role="tab"
+                            aria-selected="false"
+                        >
+                            contact
+                        </button>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- ── Workspace ─────────────────────────────────────── -->
+        <main class="workspace" aria-live="polite">
+            <!-- HOME -->
+            <section
+                id="home"
+                class="terminal-window is-active"
+                aria-labelledby="home-title"
+            >
+                <div class="window-shell" box-="round" shear-="top">
+                    <div class="box-header">
+                        <span is-="badge" variant-="background0">[ home ]</span>
+                        <span is-="badge" variant-="background0"
+                            >portfolio</span
+                        >
+                    </div>
+                    <div class="window-content home-layout">
+                        <!-- hero panel -->
+                        <section
+                            class="panel hero-panel"
+                            box-="round"
+                            shear-="top"
+                        >
+                            <div class="box-header">
+                                <span is-="badge" variant-="background0"
+                                    >[ profile ]</span
+                                >
+                                <span is-="badge" variant-="background0"
+                                    >● active</span
+                                >
+                            </div>
+                            <div class="panel-body hero-body">
+                                <p class="eyebrow">
+                                    Available for Internships & Full-Time Roles
+                                </p>
+                                <h1 id="home-title" class="hero-name">
+                                    ██████╗ ██████╗ █████╗ ██████╗ ███╗ ██╗██╗
+                                    ██╗███████╗███████╗██╗ ██╗
+                                    ██╔══██╗██╔══██╗██╔══██╗██╔══██╗████╗
+                                    ██║╚██╗ ██╔╝██╔════╝██╔════╝██║ ██║
+                                    ██████╔╝██████╔╝███████║██║ ██║██╔██╗ ██║
+                                    ╚████╔╝ █████╗ ███████╗███████║ ██╔═══╝
+                                    ██╔══██╗██╔══██║██║ ██║██║╚██╗██║ ╚██╔╝
+                                    ██╔══╝ ╚════██║██╔══██║ ██║ ██║ ██║██║
+                                    ██║██████╔╝██║ ╚████║ ██║
+                                    ███████╗███████║██║ ██║ ╚═╝ ╚═╝ ╚═╝╚═╝
+                                    ╚═╝╚═════╝ ╚═╝ ╚═══╝ ╚═╝ ╚══════╝╚══════╝╚═╝
+                                    ╚═╝ ██╗ ██╗███████╗██╗ ██╗ ██╗███████╗██╗
+                                    ██╗ █████╗ ██████╗ ██║ ██╔╝██╔════╝██║ ██║
+                                    ██║██╔════╝██║ ██╔╝██╔══██╗██╔══██╗ █████╔╝
+                                    █████╗ ██║ ██║ ██║███████╗█████╔╝
+                                    ███████║██████╔╝ ██╔═██╗ ██╔══╝ ██║ ██║
+                                    ██║╚════██║██╔═██╗ ██╔══██║██╔══██╗ ██║
+                                    ██╗███████╗███████╗╚██████╔╝███████║██║
+                                    ██╗██║ ██║██║ ██║ ╚═╝ ╚═╝╚══════╝╚══════╝
+                                    ╚═════╝ ╚══════╝╚═╝ ╚═╝╚═╝ ╚═╝╚═╝ ╚═╝
+                                </h1>
+                                <p class="role-line">
+                                    Software & Machine Learning Engineer
+                                </p>
+                                <p class="lead">
+                                    I build machine learning systems,
+                                    high-performance backend services, and
+                                    cloud-native applications focused on
+                                    reliability, scalability, and real-world
+                                    deployment.
+                                </p>
+                                <div class="pill-row">
+                                    <span class="chip chip-green"
+                                        >● open_to_work</span
+                                    >
+                                    <span class="chip"
+                                        >focus: ml systems + apis</span
+                                    >
+                                    <span class="chip">remote / hybrid</span>
+                                </div>
+                                <div class="action-row">
+                                    <button
+                                        class="btn-action"
+                                        type="button"
+                                        data-section="projects"
+                                    >
+                                        View Projects
+                                    </button>
+                                    <a
+                                        class="btn-action btn-dim"
+                                        href="./assets/Resume.pdf"
+                                        download
+                                        >Download Résumé</a
+                                    >
+                                </div>
+                                <div class="link-row">
+                                    <a
+                                        href="https://github.com/pradness"
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        >GitHub</a
+                                    >
+                                    <span class="dim">•</span>
+                                    <a
+                                        href="https://linkedin.com/in/pradnyesh-keluskar"
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        >LinkedIn</a
+                                    >
+                                    <span class="dim">•</span>
+                                    <a
+                                        href="mailto:pradnyesh.keluskar23@spit.ac.in"
+                                        >Email</a
+                                    >
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- sidebar -->
+                        <aside class="home-sidebar">
+                            <section
+                                class="panel"
+                                box-="round"
+                                shear-="top"
+                                aria-label="System info"
+                            >
+                                <div class="box-header">
+                                    <span is-="badge" variant-="background0"
+                                        >[ system_info ]</span
+                                    >
+                                </div>
+                                <div class="panel-body">
+                                    <ul class="info-list">
+                                        <li>
+                                            <span class="dim">role</span
+                                            ><strong
+                                                >Machine Learning
+                                                Engineer</strong
+                                            >
+                                        </li>
+                                        <li>
+                                            <span class="dim">focus</span
+                                            ><strong
+                                                >ML Systems · Backend APIs ·
+                                                MLOps</strong
+                                            >
+                                        </li>
+                                        <li>
+                                            <span class="dim">stack</span
+                                            ><strong
+                                                >Python · FastAPI · Docker ·
+                                                AWS</strong
+                                            >
+                                        </li>
+                                        <li>
+                                            <span class="dim">status</span
+                                            ><span class="accent-green"
+                                                >open_to_work</span
+                                            >
+                                        </li>
+                                        <li>
+                                            <span class="dim">location</span
+                                            ><strong>Mumbai, India</strong>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </section>
+
+                            <section
+                                class="panel"
+                                box-="round"
+                                shear-="top"
+                                aria-label="Coding stats"
+                            >
+                                <div class="box-header">
+                                    <span is-="badge" variant-="background0"
+                                        >[ coding_stats ]</span
+                                    >
+                                </div>
+                                <div class="stats-grid">
+                                    <div class="stat">
+                                        <p class="stat-label">Repositories</p>
+                                        <p class="stat-val">8</p>
+                                    </div>
+                                    <div class="stat">
+                                        <p class="stat-label">Contributions</p>
+                                        <p class="stat-val">160</p>
+                                    </div>
+                                    <div class="stat">
+                                        <p class="stat-label">LeetCode</p>
+                                        <p class="stat-val">450+</p>
+                                    </div>
+                                    <div class="stat">
+                                        <p class="stat-label">Codeforces</p>
+                                        <p class="stat-val">Newbie</p>
+                                    </div>
+                                </div>
+                            </section>
+                        </aside>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ABOUT -->
+            <section
+                id="about"
+                class="terminal-window"
+                aria-labelledby="about-title"
+                aria-hidden="true"
+            >
+                <div class="window-shell" box-="round" shear-="top">
+                    <div class="box-header">
+                        <span is-="badge" variant-="background0"
+                            >[ about ]</span
+                        >
+                        <span is-="badge" variant-="background0"
+                            >student @ SPIT</span
+                        >
+                    </div>
+                    <div class="window-content section-layout">
+                        <section class="panel" box-="round" shear-="top">
+                            <div class="box-header">
+                                <span is-="badge" variant-="background0"
+                                    >[ whoami ]</span
+                                >
+                            </div>
+                            <div class="panel-body">
+                                <h2 id="about-title" class="section-title">
+                                    Building reliable ML systems, from model to
+                                    production.
+                                </h2>
+                                <p class="lead">
+                                    I'm an aspiring
+                                    <strong>Machine Learning Engineer</strong>
+                                    and
+                                    <strong>Backend Software Engineer</strong>
+                                    who enjoys building reliable systems at the
+                                    intersection of machine learning and backend
+                                    infrastructure.
+                                </p>
+                                <p>
+                                    My work spans machine learning, backend
+                                    engineering, and MLOps—from training and
+                                    evaluating models to developing scalable
+                                    APIs, deployment pipelines, and cloud-native
+                                    applications. I focus on writing
+                                    maintainable software that is reliable,
+                                    observable, and ready for production.
+                                </p>
+                            </div>
+                        </section>
+
+                        <div class="two-col">
+                            <section class="panel" box-="round" shear-="top">
+                                <div class="box-header">
+                                    <span is-="badge" variant-="background0"
+                                        >[ currently_building ]</span
+                                    >
+                                </div>
+                                <div class="panel-body">
+                                    <ul class="item-list">
+                                        <li>
+                                            Real-time voice scam detection
+                                            systems
+                                        </li>
+                                        <li>
+                                            Inference APIs and backend services
+                                        </li>
+                                        <li>
+                                            Model serving and
+                                            evaluationpipelines
+                                        </li>
+                                        <li>
+                                            Containerized deployment workflows
+                                        </li>
+                                        <li>Quantum-classical ML research</li>
+                                    </ul>
+                                </div>
+                            </section>
+
+                            <section class="panel" box-="round" shear-="top">
+                                <div class="box-header">
+                                    <span is-="badge" variant-="background0"
+                                        >[ approach ]</span
+                                    >
+                                </div>
+                                <div class="panel-body">
+                                    <ul class="item-list">
+                                        <li>Design simple, testable systems</li>
+                                        <li>
+                                            Prioritize maintainability over
+                                            complexity
+                                        </li>
+                                        <li>
+                                            Data and metrics guide decisions
+                                        </li>
+                                        <li>
+                                            Build software that scales reliably
+                                        </li>
+                                    </ul>
+                                </div>
+                            </section>
+                            <section class="panel" box-="round" shear-="top">
+                                <div class="box-header">
+                                    <span is-="badge" variant-="background0"
+                                        >[ tech_focus ]</span
+                                    >
+                                </div>
+                                <div class="panel-body">
+                                    <ul class="item-list">
+                                        <li>Machine Learning Systems</li>
+                                        <li>Backend Engineering</li>
+                                        <li>MLOps</li>
+                                        <li>Cloud and Data Analytics</li>
+                                    </ul>
+                                </div>
+                            </section>
+                            <section class="panel" box-="round" shear-="top">
+                                <div class="box-header">
+                                    <span is-="badge" variant-="background0"
+                                        >[ outside_coding ]</span
+                                    >
+                                </div>
+                                <div class="panel-body">
+                                    <ul class="item-list">
+                                        <li>Competitive programming</li>
+                                        <li>Linux customization</li>
+                                        <li>Drawing</li>
+                                    </ul>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SKILLS -->
+            <section
+                id="skills"
+                class="terminal-window"
+                aria-labelledby="skills-title"
+                aria-hidden="true"
+            >
+                <div class="window-shell" box-="round" shear-="top">
+                    <div class="box-header">
+                        <span is-="badge" variant-="background0"
+                            >[ skills ]</span
+                        >
+                        <span is-="badge" variant-="background0"
+                            >technical toolkit</span
+                        >
+                    </div>
+                    <div class="window-content section-layout">
+                        <section class="panel" box-="round" shear-="top">
+                            <div class="panel-body">
+                                <p></p>
+                                <h2 id="about-title" class="section-title">
+                                    Technologies I Work With
+                                </h2>
+                                <p class="lead">
+                                    Technologies I use to build machine learning
+                                    systems, backend services, and cloud-native
+                                    applications.
+                                </p>
+                            </div>
+                        </section>
+                        <div class="two-col">
+                            <section
+                                class="panel skill-panel"
+                                box-="round"
+                                shear-="top"
+                            >
+                                <div class="box-header">
+                                    <span is-="badge" variant-="background0"
+                                        >[ programming ]</span
+                                    >
+                                </div>
+                                <div class="panel-body tag-grid">
+                                    <span class="tag">Python</span>
+                                    <span class="tag">Java</span>
+                                    <span class="tag">SQL</span>
+                                    <span class="tag">C</span>
+                                </div>
+                            </section>
+
+                            <section
+                                class="panel skill-panel"
+                                box-="round"
+                                shear-="top"
+                            >
+                                <div class="box-header">
+                                    <span is-="badge" variant-="background0"
+                                        >[ machine_learning ]</span
+                                    >
+                                </div>
+                                <div class="panel-body tag-grid">
+                                    <span class="tag">Scikit-learn</span>
+                                    <span class="tag">TensorFlow</span>
+                                    <span class="tag">NumPy</span>
+                                    <span class="tag">Pandas</span>
+                                </div>
+                            </section>
+
+                            <section
+                                class="panel skill-panel"
+                                box-="round"
+                                shear-="top"
+                            >
+                                <div class="box-header">
+                                    <span is-="badge" variant-="background0"
+                                        >[ backend ]</span
+                                    >
+                                </div>
+                                <div class="panel-body tag-grid">
+                                    <span class="tag">FastAPI</span>
+                                    <span class="tag">REST APIs</span>
+                                    <span class="tag">PostgreSQL</span>
+                                    <span class="tag">JWT Auth.</span>
+                                    <span class="tag">Kafka</span>
+                                </div>
+                            </section>
+
+                            <section
+                                class="panel skill-panel"
+                                box-="round"
+                                shear-="top"
+                            >
+                                <div class="box-header">
+                                    <span is-="badge" variant-="background0"
+                                        >[ cloud_devops ]</span
+                                    >
+                                </div>
+                                <div class="panel-body tag-grid">
+                                    <span class="tag">Docker</span>
+                                    <span class="tag">CI/CD</span>
+                                    <span class="tag">AWS</span>
+                                    <span class="tag">Terraform</span>
+                                    <span class="tag">GitHub Actions</span>
+                                </div>
+                            </section>
+
+                            <section
+                                class="panel skill-panel"
+                                box-="round"
+                                shear-="top"
+                            >
+                                <div class="box-header">
+                                    <span is-="badge" variant-="background0"
+                                        >[ data ]</span
+                                    >
+                                </div>
+                                <div class="panel-body tag-grid">
+                                    <span class="tag">Apache Spark</span>
+                                    <span class="tag">PowerBI</span>
+                                    <span class="tag">Hadoop</span>
+                                </div>
+                            </section>
+
+                            <section
+                                class="panel skill-panel"
+                                box-="round"
+                                shear-="top"
+                            >
+                                <div class="box-header">
+                                    <span is-="badge" variant-="background0"
+                                        >[ tools ]</span
+                                    >
+                                </div>
+                                <div class="panel-body tag-grid">
+                                    <span class="tag">Linux</span>
+                                    <span class="tag">Git</span>
+                                    <span class="tag">Jupyter</span>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PROJECTS -->
+            <section
+                id="projects"
+                class="terminal-window"
+                aria-labelledby="projects-title"
+                aria-hidden="true"
+            >
+                <div class="window-shell" box-="round" shear-="top">
+                    <div class="box-header">
+                        <span is-="badge" variant-="background0"
+                            >[ projects ]</span
+                        >
+                        <span is-="badge" variant-="background0"
+                            >featured work</span
+                        >
+                    </div>
+                    <div class="window-content section-layout">
+                        <section class="panel" box-="round" shear-="top">
+                            <div class="panel-body">
+                                <p></p>
+                                <h2 id="about-title" class="section-title">
+                                    Things I've Built
+                                </h2>
+                                <p class="lead">
+                                    Production-focused machine learning,
+                                    backend, cloud, and research projects.
+                                </p>
+                            </div>
+                        </section>
+                        <div class="two-col">
+                            <section class="panel" box-="round" shear-="top">
+                                <div class="box-header">
+                                    <span is-="badge" variant-="background0"
+                                        >[ aeroscan ]</span
+                                    >
+                                    <span is-="badge" variant-="background0"
+                                        >[ machine learning · 2025 ]</span
+                                    >
+                                </div>
+                                <div class="panel-body project-card-body">
+                                    <div class="project-card-copy">
+                                        <p class="stack-line">
+                                            <strong>Stack:</strong> Python ·
+                                            Scikit-learn · GeoSpatial Analysis
+                                        </p>
+                                        <ul class="item-list">
+                                            <li>
+                                                Built an aerial imagery analysis
+                                                pipeline for automated land-use
+                                                and terrain classification.
+                                            </li>
+                                            <li>
+                                                Designed an end-to-end
+                                                preprocessing and feature
+                                                extraction workflow for large
+                                                geospatial datasets.
+                                            </li>
+                                            <li>
+                                                Improved analysis efficiency
+                                                through automated data
+                                                processing and visualization.
+                                            </li>
+                                        </ul>
+                                        <div class="action-row mt">
+                                            <a
+                                                class="btn-action"
+                                                href="https://github.com/pradness/aeroscan"
+                                                target="_blank"
+                                                rel="noreferrer"
+                                                >GitHub</a
+                                            >
+                                        </div>
+                                    </div>
+                                    <aside
+                                        class="project-card-media"
+                                        aria-label="AeroScan preview"
+                                    >
+                                        <img
+                                            src="./assets/AeroScan.png"
+                                            alt="AeroScan project preview"
+                                        />
+                                    </aside>
+                                </div>
+                            </section>
+                            <section class="panel" box-="round" shear-="top">
+                                <div class="box-header">
+                                    <span is-="badge" variant-="background0"
+                                        >[ ctf_platform ]</span
+                                    >
+                                    <span is-="badge" variant-="background0"
+                                        >[ infra · 2024 ]</span
+                                    >
+                                </div>
+                                <div class="panel-body project-card-body">
+                                    <div class="project-card-copy">
+                                        <p class="stack-line">
+                                            <strong>Stack:</strong> AWS ·
+                                            Terraform · Docker · Jenkins
+                                        </p>
+                                        <ul class="item-list">
+                                            <li>
+                                                Provisioned AWS infrastructure
+                                                using Terraform, including EC2,
+                                                VPC, IAM, RDS, ECR, and S3
+                                                remote state.
+                                            </li>
+                                            <li>
+                                                Deployed containerized security
+                                                challenges on a Kubernetes (k3s)
+                                                cluster with namespace
+                                                isolation.
+                                            </li>
+                                            <li>
+                                                Built a Jenkins CI/CD pipeline
+                                                with automated Trivy
+                                                vulnerability scanning before
+                                                deployment.
+                                            </li>
+                                        </ul>
+                                        <div class="action-row mt">
+                                            <a
+                                                class="btn-action"
+                                                href="https://github.com/pradness/ctf-platform"
+                                                target="_blank"
+                                                rel="noreferrer"
+                                                >GitHub</a
+                                            >
+                                        </div>
+                                    </div>
+                                    <aside
+                                        class="project-card-media"
+                                        aria-label="CTF Platform preview"
+                                    >
+                                        <img
+                                            src="./assets/CTFplatform.png"
+                                            alt="CTF Platform project preview"
+                                        />
+                                    </aside>
+                                </div>
+                            </section>
+                            <section class="panel" box-="round" shear-="top">
+                                <div class="box-header">
+                                    <span is-="badge" variant-="background0"
+                                        >[ modelgate ]</span
+                                    >
+                                    <span is-="badge" variant-="background0"
+                                        >[ backend · ongoing ]</span
+                                    >
+                                </div>
+                                <div class="panel-body">
+                                    <p class="stack-line">
+                                        <strong>Stack:</strong> FastAPI · Docker
+                                        · PostgreSQL · JWT
+                                    </p>
+                                    <ul class="item-list">
+                                        <li>
+                                            Built a centralized API gateway with
+                                            authentication, request validation,
+                                            and service routing.
+                                        </li>
+                                        <li>
+                                            Designed modular backend services
+                                            with secure JWT-based authorization.
+                                        </li>
+                                        <li>
+                                            Added observability and scalable
+                                            deployment support.
+                                        </li>
+                                    </ul>
+                                    <div class="action-row mt">
+                                        <a
+                                            class="btn-action"
+                                            href="https://github.com/pradness/modelgate"
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            >GitHub</a
+                                        >
+                                        <a class="btn-action btn-dim" href="#"
+                                            >Live Demo</a
+                                        >
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="panel" box-="round" shear-="top">
+                                <div class="box-header">
+                                    <span is-="badge" variant-="background0"
+                                        >[ diasense ]</span
+                                    >
+                                    <span is-="badge" variant-="background0"
+                                        >[ machine_learning · 2025 ]</span
+                                    >
+                                </div>
+                                <div class="panel-body">
+                                    <p class="stack-line">
+                                        <strong>Stack:</strong> Python · XGBoost
+                                        · SHAP · FastAPI
+                                    </p>
+                                    <ul class="item-list">
+                                        <li>
+                                            Built an explainable diabetes risk
+                                            prediction system using lifestyle
+                                            and demographic features.
+                                        </li>
+                                        <li>
+                                            Developed a complete ML pipeline
+                                            covering preprocessing, training,
+                                            evaluation, and model
+                                            interpretation.
+                                        </li>
+                                        <li>
+                                            Integrated SHAP explanations to
+                                            improve transparency and support
+                                            decision making.
+                                        </li>
+                                    </ul>
+                                    <div class="action-row mt">
+                                        <a
+                                            class="btn-action"
+                                            href="https://github.com/pradness/modelgate"
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            >GitHub</a
+                                        >
+                                        <a class="btn-action btn-dim" href="#"
+                                            >Live Demo</a
+                                        >
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="panel" box-="round" shear-="top">
+                                <div class="box-header">
+                                    <span is-="badge" variant-="background0"
+                                        >[ quantum_ml_hsi ]</span
+                                    >
+                                    <span is-="badge" variant-="background0"
+                                        >[ research · 2025 ]</span
+                                    >
+                                </div>
+                                <div class="panel-body">
+                                    <p class="stack-line">
+                                        <strong>Stack:</strong> Qiskit · IBM QPU
+                                        · SVM · Python
+                                    </p>
+                                    <ul class="item-list">
+                                        <li>
+                                            Hybrid quantum-classical SVM for
+                                            hyperspectral image classification
+                                        </li>
+                                        <li>
+                                            ~93% accuracy on Botswana dataset
+                                            via ZZFeatureMap + RBF ensemble
+                                        </li>
+                                        <li>
+                                            Published: IEEE format, targeting
+                                            IGARSS / SPIE
+                                        </li>
+                                    </ul>
+                                    <div class="action-row mt">
+                                        <a
+                                            class="btn-action"
+                                            href="https://github.com/yourusername/quantum-ml-hsi"
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            >GitHub</a
+                                        >
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="panel" box-="round" shear-="top">
+                                <div class="box-header">
+                                    <span is-="badge" variant-="background0"
+                                        >[ certichain ]</span
+                                    >
+                                    <span is-="badge" variant-="background0"
+                                        >[ hackathon · 2024 ]</span
+                                    >
+                                </div>
+                                <div class="panel-body">
+                                    <p class="stack-line">
+                                        <strong>Stack:</strong> circom · snarkjs
+                                        · did-jwt · FastAPI · React
+                                    </p>
+                                    <ul class="item-list">
+                                        <li>
+                                            Built a decentralized academic
+                                            credential verification platform
+                                            using Zero-Knowledge Proofs.
+                                        </li>
+                                        <li>
+                                            Implemented Circom circuits for
+                                            secure proof generation and
+                                            verification.
+                                        </li>
+                                        <li>
+                                            Developed a FastAPI backend with a
+                                            React frontend for credential
+                                            management.
+                                        </li>
+                                    </ul>
+                                    <div class="action-row mt">
+                                        <a
+                                            class="btn-action"
+                                            href="https://github.com/pradness/certichain"
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            >GitHub</a
+                                        >
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONTACT -->
+            <section
+                id="contact"
+                class="terminal-window"
+                aria-labelledby="contact-title"
+                aria-hidden="true"
+            >
+                <div class="window-shell" box-="round" shear-="top">
+                    <div class="box-header">
+                        <span is-="badge" variant-="background0"
+                            >[ contact ]</span
+                        >
+                        <span is-="badge" variant-="background0"
+                            >● open_to_work</span
+                        >
+                    </div>
+                    <div class="window-content section-layout">
+                        <section class="panel" box-="round" shear-="top">
+                            <div class="box-header">
+                                <span is-="badge" variant-="background0"
+                                    >[ curl ]</span
+                                >
+                            </div>
+                            <div class="panel-body">
+                                <h2 id="contact-title" class="section-title">
+                                    Let's build dependable software together.
+                                </h2>
+                                <p class="lead">
+                                    If you're hiring for machine learning,
+                                    backend, or MLOps-focused roles, I'd love to
+                                    connect.
+                                </p>
+                                <p>
+                                    <span class="prompt"
+                                        >visitor@portfolio:~$</span
+                                    >
+                                    initiate_contact --channel email
+                                </p>
+                                <div class="action-row mt">
+                                    <a
+                                        class="btn-action"
+                                        href="mailto:pradnyesh.keluskar23@spit.ac.in?subject=Portfolio%20Inquiry"
+                                        >Send Message</a
+                                    >
+                                    <a
+                                        class="btn-action btn-dim"
+                                        href="https://linkedin.com/in/pradnyesh-keluskar"
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        >LinkedIn</a
+                                    >
+                                    <a
+                                        class="btn-action btn-dim"
+                                        href="https://github.com/pradness"
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        >GitHub</a
+                                    >
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- ── Status bar: NO shear, content is inside the box ── -->
+        <footer class="statusbar" box-="round" aria-label="Terminal status bar">
+            <div class="status-inner">
+                <div class="status-left">
+                    <span
+                        >window:
+                        <strong id="currentSection">[ home ]</strong></span
+                    >
+                    <span class="dim">│</span>
+                    <span>branch: <strong>main</strong></span>
+                </div>
+                <div class="status-right">
+                    <details class="theme-dropdown">
+                        <summary class="theme-btn" aria-label="Theme selector">
+                            theme
+                        </summary>
+                        <div
+                            class="theme-menu"
+                            id="themeMenu"
+                            role="menu"
+                            aria-label="Theme selector"
+                        ></div>
+                    </details>
+                    <span class="dim">│</span>
+                    <span id="localTime" class="dim txt-sm">--:--:--</span>
+                </div>
+            </div>
+        </footer>
+
+        <script src="./script.js"></script>
+    </body>
+</html>
